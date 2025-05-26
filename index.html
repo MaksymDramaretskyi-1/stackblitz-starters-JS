@@ -17,7 +17,26 @@
       <a href="/page2.html">Other page</a>
     </nav>
     <main>
-      <h1>Home page</h1>
+
+      <form>
+
+        <input type="number" id="inputValue" placeholder="Input value">
+
+        <select id="conversionType">
+          <option value="cmToM">cm til meter</option>
+          <option value="kgToG">kg til gram</option>
+        </select>
+        <button id="convertButton">conversion</button>
+      
+      
+      </form>
+      
+      
+      <div class="block-message-show">
+        <div><p>Show conversion</p></div>
+        <p id="result"></p>
+      </div>
+    
     </main>
   </body>
 </html>
