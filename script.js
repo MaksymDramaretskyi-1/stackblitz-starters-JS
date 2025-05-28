@@ -50,7 +50,8 @@
 
 let inputValueUser = document.getElementById("inputValue");
 let conversionSelect = document.getElementById("conversionType");
-let resultParagraph =  document.getElementById("result");
+let resultFirst =  document.getElementById("resultFirst");
+let resultSecondary = document.getElementById("resultSecondary")
 let convertButton = document.getElementById("convertButton");
 
 function convert () {
@@ -60,19 +61,18 @@ function convert () {
 
 
   if (isNaN(value)) {
-    resultParagraph.textContent = "Пожалуйста, введите корректное число.";
+    resultFirst.textContent = "Пожалуйста, введите корректное число.";
     return;
   }
 
 
-  if (type === "cmToM") {
+  if (type === "cmToM" || type === "kgToG") {
     result = value / 100;
-    resultParagraph.textContent = `${value} cm = ${result} m`;
-  } else if (type === "kgToG") {
     result = value * 1000;
-    resultParagraph.textContent = `${value} kg = ${result} g`;
+    resultFirst.textContent = `${value} cm = ${result} m`;
+    resultSecondary.textContent = `${value} kg = ${result} g`;
   } else {
-    resultParagraph.textContent = "Неизвестный тип конвертации.";
+    resultFirst.textContent = "Неизвестный тип конвертации.";
   }
 
   event.preventDefault();
