@@ -54,30 +54,27 @@ let resultFirst =  document.getElementById("resultFirst");
 let resultSecondary = document.getElementById("resultSecondary")
 let convertButton = document.getElementById("convertButton");
 
-function convert () {
+function convert (event) {
+  event.preventDefault();
+
   const value = parseFloat(inputValueUser.value);
   const type = conversionSelect.value;
   let result;
 
 
-  if (isNaN(value)) {
-    resultFirst.textContent = "Пожалуйста, введите корректное число.";
+  if (isNaN(value) || value === 0) {
+    resultFirst.textContent = "Please enter a valid value greater than zero";
+    resultSecondary.textContent = "";
     return;
   }
-
 
   if (type === "cmToM" || type === "kgToG") {
     result = value / 100;
     result = value * 1000;
     resultFirst.textContent = `${value} cm = ${result} m`;
     resultSecondary.textContent = `${value} kg = ${result} g`;
-  } else {
-    resultFirst.textContent = "Неизвестный тип конвертации.";
   }
-
-  event.preventDefault();
+  
 }
-
-
-
+  
 convertButton.addEventListener("click",convert);
