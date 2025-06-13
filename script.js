@@ -60,13 +60,11 @@ function convert (event) {
   const type = conversionSelect.value;
   let result = null;
 
-
   if (isNaN(value) || value === 0) {
     resultForm.textContent = "Please enter a valid value greater than zero";
 
     return;
   }
-
 
   if (type === "cmToM") {
     result = value / 100;

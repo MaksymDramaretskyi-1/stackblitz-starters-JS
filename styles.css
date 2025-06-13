@@ -9,7 +9,6 @@ body {
   background-color: rgb(193, 193, 193);
 }
 
-
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -53,9 +52,8 @@ form {
   width: 300px;
   flex-direction: column;
   gap: 30px;
-
-  
 }
+
 form label, select, input, button {
   width: 200px;
 }
@@ -100,7 +98,6 @@ select:hover {
   border-radius: 8px;
   border: 2px solid #E24429;
 }
-
 
 .block-message-show {
   display: flex;
