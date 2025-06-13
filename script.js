@@ -50,8 +50,7 @@
 
 let inputValueUser = document.getElementById("inputValue");
 let conversionSelect = document.getElementById("conversionType");
-let resultFirst =  document.getElementById("resultFirst");
-let resultSecondary = document.getElementById("resultSecondary")
+let resultForm =  document.getElementById("result");
 let convertButton = document.getElementById("convertButton");
 
 function convert (event) {
@@ -59,22 +58,28 @@ function convert (event) {
 
   const value = parseFloat(inputValueUser.value);
   const type = conversionSelect.value;
-  let result;
+  let result = null;
 
 
   if (isNaN(value) || value === 0) {
-    resultFirst.textContent = "Please enter a valid value greater than zero";
-    resultSecondary.textContent = "";
+    resultForm.textContent = "Please enter a valid value greater than zero";
+
     return;
   }
 
-  if (type === "cmToM" || type === "kgToG") {
+
+  if (type === "cmToM") {
     result = value / 100;
+    resultForm.textContent = `${value} cm = ${result} m`;
+
+  } else if (type === "kgToG") {
     result = value * 1000;
-    resultFirst.textContent = `${value} cm = ${result} m`;
-    resultSecondary.textContent = `${value} kg = ${result} g`;
+    resultForm.textContent = `${value} kg = ${result} g`;
+
+  } else {
+    resultForm.textContent = "Unknown conversion type.";
   }
   
 }
   
-convertButton.addEventListener("click",convert);
+convertButton.addEventListener("click", convert);

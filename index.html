@@ -17,32 +17,26 @@
       <a href="/page2.html">Other page</a>
     </nav>
     <main>
-      <div class="style-form">
+
+      <form>
+        <input type="number" id="inputValue" placeholder="Input value">
+        <select id="conversionType">
+          <option value="cmToM">cm til meter</option>
+          <option value="kgToG">kg til gram</option>
+        </select>
+        <button id="convertButton">conversion</button>
+      </form>
+      
+      <div>
         <div>
-          <h3>Let's convert!</h3>
-          <form>
-            <label for="inputValue">
-               Valid number
-              <input type="number" name="inputValue" id="inputValue" placeholder="Input value">
-            </label>
-    
-            <label for="selectOptions">
-              Select transformation
-              <select name="selectOptions" id="conversionType">
-                <option value="cmToM">cm til meter</option>
-                <option value="kgToG">kg til gram</option>
-              </select>
-            </label>
-            <button id="convertButton">conversion</button>
-          </form>
+          <div>
+
+          </div>
         </div>
-        
-        
-        <div class="block-message-show">
-          <div><p>Show conversion</p></div>
-          <p id="resultFirst"></p>
-          <p id="resultSecondary"></p>
-        </div>
+      </div>
+      <div class="block-message-show">
+        <div><p>Show conversion</p></div>
+        <p id="result"></p>
       </div>
     
     </main>
